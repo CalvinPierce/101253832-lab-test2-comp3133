@@ -1,0 +1,35 @@
+<div *ngIf="mission">
+	<h1>SpaceX Mission Details</h1>
+	<div mat-card-title class=" details">
+		<img src="{{mission.links['mission_patch_small']}}" alt="Launch Photo">
+		<mat-card-title>Mission - {{mission.mission_name}}</mat-card-title><br/>
+		<mat-card-header>Name:</mat-card-header>
+		<mat-card-content>{{mission.mission_name}}</mat-card-content><br/>
+		<mat-card-header>Launch Year:</mat-card-header> {{mission.launch_year}}<br/>
+
+		<mat-card-title>Rocket</mat-card-title><br/>
+		<mat-card-header>Name:</mat-card-header>
+		<mat-card-content>{{mission.rocket['rocket_name']}}</mat-card-content><br/>
+		<mat-card-header>Type:</mat-card-header> 
+		<mat-card-content>{{mission.rocket['rocket_type']}}</mat-card-content><br/>
+
+		<mat-card-title>Launch Site</mat-card-title><br/>
+		<mat-card-header>Name:</mat-card-header>
+		<mat-card-content>{{mission.launch_site['site_name_long']}}</mat-card-content><br/>
+
+		<mat-card-title>Launch Details</mat-card-title><br/>
+		<mat-card-content>{{mission.details}}</mat-card-content><br/>
+
+		<mat-card-title>More Info On Launch Details</mat-card-title><br/>
+		<a href="{{mission.links['article_link']}}">
+			<mat-icon>assignment</mat-icon>
+		</a>
+		<a href="{{mission.links['wikipedia']}}">
+			<mat-icon>public</mat-icon>
+		</a>
+		<a href="{{mission.links['video_link']}}">
+			<mat-icon>videocam</mat-icon>
+		</a>
+	</div>
+	<button (click)="goBack(true)">Back To Misson List</button>
+</div>

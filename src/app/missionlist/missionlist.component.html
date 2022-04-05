@@ -1,0 +1,10 @@
+<div *ngFor="let mission of missions" (click)="missionSelect(mission)" [class.selected]="mission === selectedMission">
+    <div *ngIf="showList" class="list">
+        <img src="{{mission.links.mission_patch_small}}" alt="Launch Photo">
+        <mat-card-header class="list-item">{{mission.mission_name}}
+        </mat-card-header><br/>
+        <mat-card-subtitle class="list-item">{{mission.launch_year}}</mat-card-subtitle><br/><br/><br/>
+        <mat-card-content class="list-item">{{mission.details}}</mat-card-content>
+    </div>
+</div>
+<app-missiondetails *ngIf="showDiv" [mission]="selectedMission" (value)='goBack($event)'></app-missiondetails>
